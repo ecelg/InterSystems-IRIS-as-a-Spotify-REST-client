@@ -101,6 +101,8 @@ ClassMethod getdata(apiname = "", path = "", query = "0") As %String [ Language 
 {
 	#w ##class(rest.utli.requestUtli).getdata("Spotify","/artists/4Z8W4fKeB5YxbusRsdQVPb")
 	#w ##class(rest.utli.requestUtli).getdata("Spotify","/search","offset=2&limit=2&query=Ed%20Sheeran&type=artist&market=SG")
+	#w ##class(rest.utli.requestUtli).getdata("Spotify","/tracks/5cy3CNTBZbX8vZUIsu4p7K","market=SG")
+	#w ##class(rest.utli.requestUtli).getdata("Spotify","/search","offset=5&limit=10&query=Shape%20of%20you&type=track&market=SG")
 	import requests
 	import json
 	import iris
