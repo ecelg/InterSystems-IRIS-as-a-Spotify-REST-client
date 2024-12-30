@@ -97,4 +97,35 @@ ClassMethod getToken(apiname As %String = "") As %String [ Language = objectscri
 	return token
 }
 
+ClassMethod getdata(apiname = "", path = "", query = "0") As %String [ Language = python ]
+{
+	#w ##class(rest.utli.requestUtli).getdata("Spotify","/artists/4Z8W4fKeB5YxbusRsdQVPb")
+	#w ##class(rest.utli.requestUtli).getdata("Spotify","/search","offset=2&limit=2&query=Ed%20Sheeran&type=artist&market=SG")
+	import requests
+	import json
+	import iris
+	
+	# get the token by apiname
+	token=iris.cls('rest.utli.requestUtli').getToken(apiname)
+	
+	# get the apiinfo object by apiname
+	rowid=iris.cls('rest.class.apiinfo').checkRowid(apiname)
+	a=iris.cls('rest.class.apiinfo')._OpenId(rowid)
+	
+	# parameter perparation
+	api_baseurl=a.apiurl
+	api_url=api_baseurl+path
+	if query!="0":
+		api_url=api_baseurl+path+"?"+query
+	
+	atoken=a.tokentype+" "+token
+	headers={"Authorization":atoken}
+	
+	del a
+	
+	# get it
+	response = requests.get(api_url,headers=headers, verify=False)
+	return json.dumps(response.json())
+}
+
 }
