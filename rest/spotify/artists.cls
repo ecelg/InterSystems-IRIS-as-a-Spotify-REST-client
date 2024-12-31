@@ -18,28 +18,4 @@ ClassMethod checkRowid(spotifyid As %String = "") As %Integer [ Language = objec
 	return rtn
 }
 
-Storage Default
-{
-<Data name="artistsDefaultData">
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>name</Value>
-</Value>
-<Value name="3">
-<Value>spotifyid</Value>
-</Value>
-<Value name="4">
-<Value>spotifyurl</Value>
-</Value>
-</Data>
-<DataLocation>^rest.spotify.artistsD</DataLocation>
-<DefaultData>artistsDefaultData</DefaultData>
-<IdLocation>^rest.spotify.artistsD</IdLocation>
-<IndexLocation>^rest.spotify.artistsI</IndexLocation>
-<StreamLocation>^rest.spotify.artistsS</StreamLocation>
-<Type>%Storage.Persistent</Type>
-}
-
 }
