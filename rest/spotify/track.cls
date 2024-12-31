@@ -24,37 +24,4 @@ ClassMethod checkRowid(spotifyid As %String = "") As %Integer [ Language = objec
 	return rtn
 }
 
-Storage Default
-{
-<Data name="trackDefaultData">
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>name</Value>
-</Value>
-<Value name="3">
-<Value>popularity</Value>
-</Value>
-<Value name="4">
-<Value>tracknumber</Value>
-</Value>
-<Value name="5">
-<Value>spotifyid</Value>
-</Value>
-<Value name="6">
-<Value>spotifyurl</Value>
-</Value>
-<Value name="7">
-<Value>album</Value>
-</Value>
-</Data>
-<DataLocation>^rest.spotify.trackD</DataLocation>
-<DefaultData>trackDefaultData</DefaultData>
-<IdLocation>^rest.spotify.trackD</IdLocation>
-<IndexLocation>^rest.spotify.trackI</IndexLocation>
-<StreamLocation>^rest.spotify.trackS</StreamLocation>
-<Type>%Storage.Persistent</Type>
-}
-
 }
